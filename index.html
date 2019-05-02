@@ -31,6 +31,12 @@
                 {nome:"Maria", telefone: "(11)2887-9898"}
             ];
 
+            $scope.operadoras = [
+                {nome: "Tim", codigo: 13},
+                {nome: "Vivo", codigo: 14},
+                {nome: "Claro", codigo: 15},
+            ];
+
             $scope.adicionarContato = function(contato){
                 $scope.contatos.push(angular.copy(contato));
                 delete $scope.contato;
@@ -51,16 +57,24 @@
                 <th>
                     Telefone
                 </th>
+                <th>
+                    Operadora
+                </th>
                 <tr ng-repeat="contato in contatos">
                     <td>{{contato.nome}}</td>
                     <td>{{contato.telefone}}</td>
+                    <td>{{contato.operadora.nome}}</td>
                 </tr>
             </tr>
         </table>
         <hr>
+
         <input class="form-control" type="text" name="nome" ng-model="contato.nome" placeholder="Nome">
         <input class="form-control" type="text" name="telefone" ng-model="contato.telefone" placeholder="Telefone">
-        <button class="btn btn-primary btn-block" ng-click="adicionarContato(contato)">Adicionar contato</button>
+        <select class="form-control" ng-model="contato.operadora" ng-options="operadora.nome for operadora in operadoras">
+            <option value="">Selecione uma operadora</option>
+        </select>
+        <button class="btn btn-primary btn-block" ng-disabled="!contato.nome || !contato.telefone" ng-click="adicionarContato(contato)">Adicionar contato</button>
     </div>
     
 </body>
