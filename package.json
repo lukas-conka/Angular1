@@ -1,0 +1,26 @@
+{
+  "name": "angular1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "angular.min.js",
+  "dependencies": {
+    "angular-locale-pt-br": "^1.3.16",
+    "express": "^4.16.4",
+    "http-server": "^0.11.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lukas-conka/Angular1.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lukas-conka/Angular1/issues"
+  },
+  "homepage": "https://github.com/lukas-conka/Angular1#readme"
+}
