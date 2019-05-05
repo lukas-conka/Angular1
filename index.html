@@ -40,7 +40,7 @@
             $scope.operadoras = [];
 
             var carregarOperadoras = function() {
-                $http.get('http://localhost:3000/api/contatos')
+                $http.get('http://localhost:3000/api/operadoras')
                 .then((operadoras) =>{
 
                     $scope.operadoras = operadoras.data;
