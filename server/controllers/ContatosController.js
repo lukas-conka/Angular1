@@ -1,21 +1,22 @@
+const mongoose = require('mongoose')
+
+const Contato  = mongoose.model('Contato')
+
 module.exports = {
 
     async index(req, res){
 
-        var operadoras = [
-            {nome: "Oi", codigo: 14, categoria: "Celular", preco: 2},
-            {nome: "Vivo", codigo: 15, categoria: "Celular", preco: 1},
-            {nome: "GVT", codigo: 23, cataegoria: "Fixo", preco: 4},
-            {nome: "Claro", codigo: 44, categoria: "Celular", preco: 5},
-        ];
+        const contatos = await Contato.find({});
 
-        var contatos = [
-            {nome: "Lucas", telefone: "11999-8888", data: new Date(), operadora: operadoras[0]},
-            {nome: "Samara", telefone: "00999-8888", data: new Date(), operadora: operadoras[1]},
-            {nome: "Faraó", telefone: "22999-8888", data: new Date(), operadora: operadoras[2]},
-        ];
+        return res.json(contatos);
 
-        return res.json(contatos)
+    },
+
+    async store(req, res){
+
+        const contato = await Contato.create(req.body)
+
+        return res.json(contato);
     },
 
      async operadoras(req, res){
